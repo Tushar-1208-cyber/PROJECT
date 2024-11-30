@@ -1,0 +1,65 @@
+{
+  "header": {
+    "logo": {
+      "link": "home.html",
+      "icon": "home-icon.png"
+    }
+  },
+  "form": {
+    "title": "Sign Up",
+    "fields": [
+      {
+        "type": "text",
+        "name": "first-name",
+        "placeholder": "First Name",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "last-name",
+        "placeholder": "Last Name",
+        "required": true
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "placeholder": "Email",
+        "required": true
+      },
+      {
+        "type": "password",
+        "name": "password",
+        "placeholder": "Password",
+        "required": true
+      }
+    ],
+    "checkbox": {
+      "name": "terms",
+      "label": "I agree to the Terms of Privacy and Policy",
+      "required": true
+    },
+    "buttons": {
+      "submit": {
+        "class": "submit-btn",
+        "text": "Sign Up"
+      },
+      "social": [
+        {
+          "class": "google-btn",
+          "text": "Sign Up with Google"
+        },
+        {
+          "class": "facebook-btn",
+          "text": "Sign Up with Facebook"
+        }
+      ]
+    },
+    "footer": {
+      "text": "Already have an account?",
+      "link": {
+        "href": "signin.html",
+        "text": "Sign In"
+      }
+    }
+  }
+}

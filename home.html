@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadgets 360</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <nav>
+      <ul></ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <div class="hero-text">
+      <h1></h1>
+    </div>
+  </main>
+  <script>
+  fetch('/api/items')
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data); // Display items in the console or render them in HTML
+    })
+    .catch((error) => console.error('Error fetching items:', error));
+</script>
+
+<script>
+  const newItem = { name: 'Sample Item', description: 'Sample Description', price: 100 };
+
+fetch('/api/items/add', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newItem),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.message); // Success message
+    })
+    .catch((error) => console.error('Error adding item:', error));
+
+</script>
+
+  <script src="home.js"></script>
+  
+</body>
+</html>

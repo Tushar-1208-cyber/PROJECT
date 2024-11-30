@@ -1,0 +1,44 @@
+[
+    {
+        "name": "OnePlus 12R",
+        "price": 45000,
+        "ram": "8+256",
+        "image": "IMG-20241112-WA0029.jpg",
+        "link": "#"
+    },
+    {
+        "name": "OnePlus Fold",
+        "price": 139000,
+        "ram": "12+256",
+        "image": "IMG-20241112-WA0026.jpg",
+        "link": "#"
+    },
+    {
+        "name": "OPPO N2 Flip",
+        "price": 74999,
+        "ram": "8+128",
+        "image": "IMG-20241112-WA0024.jpg",
+        "link": "mobile1.html"
+    },
+    {
+        "name": "Galaxy Z Fold6",
+        "price": 164000,
+        "ram": "18+512",
+        "image": "IMG-20241112-WA0028.jpg",
+        "link": "mobile2.html"
+    },
+    {
+        "name": "iPhone 16 ProMax",
+        "price": 100500,
+        "ram": "16+512",
+        "image": "IMG-20241112-WA0027.jpg",
+        "link": "#"
+    },
+    {
+        "name": "Realme GT 6",
+        "price": 50000,
+        "ram": "6+128",
+        "image": "IMG-20241112-WA0025.jpg",
+        "link": "#"
+    }
+]

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Gadgets 360</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+        }
+
+        .header-logo h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Login Section */
+        .login-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px auto;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #googleLogin {
+            background-color: #f2f2f2;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-icon">
+        <a href="home.html"><img src="home-icon.png" alt="Home"></a> <!-- Replace with your home icon image path -->
+    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-logo">
+            <h1>Gadgets 360</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="mobile.html">Mobiles</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <p>or</p>
+            <button type="button" id="googleLogin">Continue with Google</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h3>SmartPhones</h3>
+                <ul>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">See all</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Service centres</a></li>
+                    <li><a href="#">Security Response</a></li>
+                    <li><a href="#">Warranty policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Corporate Number: 0124 472 7700</p>
+                <p>Email: info@indianarena.com</p>
+                <p>Contact No.: 9871602977</p>
+            </div>
+            <div>
+                <h3>Connect us with</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-note">© 2008-2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate form inputs
+            if (name && email && password) {
+                alert('Login successful!');
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+
+        document.getElementById('googleLogin').addEventListener('click', function() {
+            alert('Google Login feature coming soon!');
+        });
+    </script>
+</body>
+</html>

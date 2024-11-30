@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Gadgets 360</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav ul li a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Product Sections */
+        .product-header {
+            text-align: left;
+            padding: 30px;
+        }
+
+        .product-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .product-header button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feature-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-section img {
+            max-width: 300px;
+            margin: 20px 0;
+        }
+
+        .feature-section h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .product-details {
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .product-details .detail-box {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 150px;
+        }
+
+        .product-details .detail-box h3 {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .product-details .detail-box p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section div {
+            width: 22%;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-logo">
+            <h1>Gadgets 360</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#" class="active">Mobiles</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Header -->
+    <section class="product-header">
+        <h1>Oppo N2 Flip</h1>
+    <button><a href= "#">Buy now</a></button>
+    <!-- Feature Sections -->
+    <section class="feature-section">
+        <h2>Pocket-Sized Design Perfection</h2>
+        <img src="WhatsApp Image 2024-11-12 at 21.48.48_99e83016.jpg" alt="Pocket-Sized Design">
+    </section>
+
+    <section class="feature-section">
+        <h2>Industry-Leading Hinge for Ultimate Crease Control</h2>
+        <img src="WhatsApp Image 2024-11-12 at 22.08.05_792528c8.jpg" alt="Hinge Control">
+    </section>
+
+    <section class="feature-section">
+        <h2>Hasselblad Camera for Mobile</h2>
+        <img src="WhatsApp Image 2024-11-12 at 22.09.16_ced01fab.jpg" alt="Hasselblad Camera">
+    </section>
+    
+    <!-- Product Specifications -->
+    <section class="product-details">
+        <div class="detail-box">
+            <h3>Battery</h3>
+            <p>4300mAh</p>
+        </div>
+        <div class="detail-box">
+            <h3>Processor</h3>
+            <p>Snapdragon 8+ Gen 1</p>
+        </div>
+        <div class="detail-box">
+            <h3>Screen</h3>
+            <p>6.8 inches</p>
+        </div>
+        <div class="detail-box">
+            <h3>Camera</h3>
+            <p>50MP Main Camera</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h3>SmartPhones</h3>
+                <ul>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">See all</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Service centres</a></li>
+                    <li><a href="#">Security Response</a></li>
+                    <li><a href="#">Warranty policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Corporate Number: 0124 472 7700</p>
+                <p>Email: info@indianarena.com</p>
+                <p>Contact No.: 9871602977</p>
+            </div>
+            <div>
+                <h3>Connect us with</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-note">© 2008-2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function buyNow() {
+            alert("Redirecting to purchase page...");
+            // Add code here to redirect to the purchase page
+        }
+    </script>
+</body>
+</html>

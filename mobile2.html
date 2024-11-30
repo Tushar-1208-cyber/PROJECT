@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Gadgets 360</title>
+    <style>                
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav ul li a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Product Header */
+        .product-header {
+            text-align: left;
+            padding: 30px;
+        }
+
+        .product-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .product-header button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Product Info Section */
+        .product-info {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .product-info img {
+            width: 400px;
+            height: auto;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .product-details h2 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .product-details p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .color-options, .storage-options, .payment-method {
+            margin-top: 10px;
+        }
+
+        .color-options label, .storage-options label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .specs-table, .address-table, .features-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table th, .specs-table td, .address-table th, .address-table td, .features-table th, .features-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .specs-table th, .address-table th, .features-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section div {
+            width: 22%;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Collapsible Key Features */
+        .feature-details {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .feature-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .feature-btn:focus {
+            outline: none;
+        }
+
+        /* New Section for Images beside Key Features Table */
+        .features-table-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .features-table {
+            width: 70%;
+        }
+
+        .feature-image-container {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-image-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-logo">
+            <h1>Gadgets 360</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#" class="active">Mobiles</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Header Section -->
+    <section class="product-header">
+        <h1>Galaxy Z Fold6</h1>
+        <button onclick="buyNow()">Buy Now</button>
+    </section>
+
+    <!-- Product Info Section -->
+    <section class="product-info">
+        <img src="WhatsApp Image 2024-11-12 at 22.11.41_2b92201a.jpg" alt="Galaxy Z Fold6">
+        <div class="product-details">
+            <h2>Device</h2>
+            <p>Galaxy Z Fold6 ₹169999.00</p>
+
+            <!-- Storage Options -->
+            <div class="storage-options">
+                <h3>Select Storage:</h3>
+                <label><input type="radio" name="storage" value="256GB"> 256GB | 12GB</label>
+                <label><input type="radio" name="storage" value="512GB"> 512GB | 12GB</label>
+                <label><input type="radio" name="storage" value="1TB"> 1TB | 16GB</label>
+            </div>
+
+            <!-- Color Options -->
+            <div class="color-options">
+                <h3>Select Color:</h3>
+                <label><input type="radio" name="color" value="Shadow"> Shadow</label>
+                <label><input type="radio" name="color" value="Pink"> Pink</label>
+                <label><input type="radio" name="color" value="Navy"> Navy</label>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="payment-method">
+                <h3>Select Payment Method:</h3>
+                <select id="paymentMethod">
+                    <option value="cash">Cash on Delivery</option>
+                    <option value="card">Credit/Debit Card</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+   <!-- Key Features Section -->
+<section class="key-features">
+    <h2>Key Features</h2>
+    <div class="features-table-container">
+        <table class="features-table">
+            <tr>
+                <th>Feature</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Display</td>
+                <td>7.6-inch Dynamic AMOLED with a 120Hz refresh rate.</td>
+            </tr>
+            <tr>
+                <td>Camera</td>
+                <td>50MP + 12MP + 12MP triple rear camera with a 10MP front camera.</td>
+            </tr>
+            <tr>
+                <td>Battery</td>
+                <td>4400mAh battery with fast charging.</td>
+            </tr>
+            <tr>
+                <td>Processor</td>
+                <td>Snapdragon 8+ Gen 1 for high-performance processing.</td>
+            </tr>
+        </table>
+
+        <div class="feature-image-container">
+            <img src="WhatsApp Image 2024-11-12 at 22.19.04_849c8ceb.jpg" alt="Display Feature">
+            <img src="WhatsApp Image 2024-11-12 at 22.13.49_927c3b38.jpg" alt="Camera Feature">
+            <img src="WhatsApp Image 2024-11-12 at 22.19.51_f62141c1.jpg" alt="Battery Feature">
+        </div>
+    </div>
+</section>
+    <!-- Delivery Details Section -->
+    <section class="delivery-details">
+        <h2>Delivery Details</h2>
+        <label for="pincode">Enter Pincode: </label>
+        <input type="text" id="pincode" placeholder="Enter your PIN code">
+        <button onclick="checkPincode()">Check</button>
+
+        <table class="address-table" id="addressTable" style="display: none;">
+            <tr>
+                <th>Area</th>
+                <th>Expected Delivery</th>
+            </tr>
+            <tr>
+                <td>Area 1</td>
+                <td>2-3 days</td>
+            </tr>
+            <tr>
+                <td>Area 2</td>
+                <td>3-5 days</td>
+            </tr>
+            <tr>
+                <td>Area 3</td>
+                <td>5-7 days</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Specifications Table -->
+    <section class="specs-section">
+        <h2>Specifications</h2>
+        <table class="specs-table">
+            <tr>
+                <th>Screen</th>
+                <td>7.6-inch Dynamic AMOLED</td>
+            </tr>
+            <tr>
+                <th>Resolution</th>
+                <td>2208 x 1768 pixels</td>
+            </tr>
+            <tr>
+                <th>Rear Camera</th>
+                <td>50MP + 12MP + 12MP</td>
+            </tr>
+            <tr>
+                <th>Battery</th>
+                <td>4400mAh</td>
+            </tr>
+            <tr>
+                <th>Processor</th>
+                <td>Snapdragon 8+ Gen 1</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h3>SmartPhones</h3>
+                <ul>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">See all</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Service centres</a></li>
+                    <li><a href="#">Security Response</a></li>
+                    <li><a href="#">Warranty policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Corporate Number: 0124 472 7700</p>
+                <p>Email: info@indianarena.com</p>
+                <p>Contact No.: 9871602977</p>
+            </div>
+            <div>
+                <h3>Connect us with</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            </div>
+        <div class="footer-note">
+            &copy; 2024 TECH ARENA. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function buyNow() {
+            alert("Redirecting to the payment page...");
+        }
+
+        function checkPincode() {
+            const addressTable = document.getElementById("addressTable");
+            addressTable.style.display = "table";
+        }
+
+        function toggleFeatureDetails(id) {
+            const featureDetails = document.getElementById(id);
+            if (featureDetails.style.display === "none" || featureDetails.style.display === "") {
+                featureDetails.style.display = "block";
+            } else {
+                featureDetails.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

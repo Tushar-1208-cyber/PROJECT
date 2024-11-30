@@ -1,0 +1,18 @@
+{
+    "title": "Gadgets 360",
+    "header": {
+      "logo": "Gadgets 360",
+      "navigation": [
+        { "name": "Home", "link": "#" },
+        { "name": "Mobiles", "link": "mobile.html" },
+        { "name": "Support", "link": "#" },
+        { "name": "Contact Us", "link": "#" },
+        { "name": "Sign up", "link": "signup.html" },
+        { "name": "Login", "link": "login.html" }
+      ]
+    },
+    "main": {
+      "heroText": "INNOVATION IN YOUR POCKET"
+    }
+  }
+  

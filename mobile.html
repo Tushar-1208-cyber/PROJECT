@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgets 360 - Mobile Store</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav ul li a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Search Bar and Sorting */
+        .search-bar {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .sort-dropdown {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Sidebar & Content Layout */
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 20%;
+            padding-right: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2, .sidebar h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .filter-options {
+            margin-top: 15px;
+        }
+
+        .filter-options label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .products {
+            width: 80%;
+            padding-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            width: 30%;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .product img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .product h5 {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .learn-more {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section div {
+            width: 22%;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-logo">
+            <h1>Gadgets 360</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#" class="active">Mobiles</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Bar and Sorting Dropdown -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search your model..." onkeyup="filterProducts()">
+        <select id="sortDropdown" class="sort-dropdown" onchange="sortProducts()">
+            <option value="">Sort by Price</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+        </select>
+    </div>
+
+    <!-- Sidebar and Products Section -->
+    <div class="container">
+        <!-- Sidebar Filter -->
+        <aside class="sidebar">
+            <h2>Mobile Store</h2>
+            <h3>RAM/Storage</h3>
+            <div class="filter-options">
+                <label><input type="checkbox" value="6+128" onchange="filterProducts()"> 6+128 GB</label>
+                <label><input type="checkbox" value="8+128" onchange="filterProducts()"> 8+128 GB</label>
+                <label><input type="checkbox" value="8+256" onchange="filterProducts()"> 8+256 GB</label>
+                <label><input type="checkbox" value="12+256" onchange="filterProducts()"> 12+256 GB</label>
+                <label><input type="checkbox" value="16+256" onchange="filterProducts()"> 16+256 GB</label>
+                <label><input type="checkbox" value="16+512" onchange="filterProducts()"> 16+512 GB</label>
+                <label><input type="checkbox" value="18+512" onchange="filterProducts()"> 18+512 GB</label>
+            </div>
+        </aside>
+
+        <!-- Products Display -->
+        <section class="products" id="productList">
+            <!-- Products will be loaded dynamically from the JSON file -->
+        </section>
+    
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h3>SmartPhones</h3>
+                <ul>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">See all</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Service centres</a></li>
+                    <li><a href="#">Security Response</a></li>
+                    <li><a href="#">Warranty policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Corporate Number: 0124 472 7700</p>
+                <p>Email: info@indianarena.com</p>
+                <p>Contact No.: 9871602977</p>
+            </div>
+            <div>
+                <h3>Connect us with</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-note">© 2008-2024. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('products.json')
+                .then(response => response.json())
+                .then(data => displayProducts(data))
+                .catch(error => console.error('Error fetching the JSON:', error));
+        });
+
+        function displayProducts(products) {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = ''; // Clear existing products
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product');
+                productCard.setAttribute('data-name', product.name);
+                productCard.setAttribute('data-ram', product.ram);
+                productCard.setAttribute('data-price', product.price);
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h5>${product.name}</h5>
+                    <p>${product.price.toLocaleString()}/-</p>
+                    <a href="${product.link}" class="learn-more">Learn more</a>
+                `;
+
+                productList.appendChild(productCard);
+            });
+        }
+
+        // Filter and Sorting Functions
+        function filterProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const checkboxes = document.querySelectorAll('.sidebar input[type="checkbox"]:checked');
+            const selectedRam = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                const name = product.querySelector('h5').textContent.toLowerCase();
+                const ram = product.getAttribute('data-ram');
+                const price = parseInt(product.getAttribute('data-price'));
+
+                // Filter by search text and selected RAM
+                if (name.includes(searchInput) && (selectedRam.length === 0 || selectedRam.includes(ram))) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function sortProducts() {
+            const sortOrder = document.getElementById('sortDropdown').value;
+            const products = Array.from(document.querySelectorAll('.product'));
+            products.sort((a, b) => {
+                const priceA = parseInt(a.getAttribute('data-price'));
+                const priceB = parseInt(b.getAttribute('data-price'));
+
+                if (sortOrder === 'asc') {
+                    return priceA - priceB;
+                } else if (sortOrder === 'desc') {
+                    return priceB - priceA;
+                }
+                return 0;
+            });
+
+            const productList = document.getElementById('productList');
+            products.forEach(product => {
+                productList.appendChild(product); // Re-attach products in sorted order
+            });
+        }
+    </script>
+</body>
+</html>
